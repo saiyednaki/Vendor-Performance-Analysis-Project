@@ -40,17 +40,17 @@ Investigate profitability variance between high-performing and low-performing ve
 **Key Findings**
 
 1. Brands for Promotional or Pricing Adjustments:
-  - 198 brands with low sales but high profit margins could benefit from targeted promotions or price adjustments.
+    - 198 brands with low sales but high profit margins could benefit from targeted promotions or price adjustments.
 2. Top Vendors by Sales & Purchase Contribution:
-  - Top 10 vendors contribute 65.69% of total purchases, highlighting dependency on a few suppliers.
+    - Top 10 vendors contribute 65.69% of total purchases, highlighting dependency on a few suppliers.
 3. Impact of Bulk Purchasing:
-  - Vendors buying in bulk achieve 72% lower unit costs, supporting cost-effective pricing strategies.
+    - Vendors buying in bulk achieve 72% lower unit costs, supporting cost-effective pricing strategies.
 4. Vendors with Low Inventory Turnover:
-  - Unsold inventory capital totals $2.71M, indicating slow-moving stock and high holding costs.
+    - Unsold inventory capital totals $2.71M, indicating slow-moving stock and high holding costs.
 5. Profit Margin Comparison:
-  - High-volume vendors have lower margins (~31%) compared to low-performing vendors (~41%), suggesting pricing or market reach inefficiencies.
+    - High-volume vendors have lower margins (~31%) compared to low-performing vendors (~41%), suggesting pricing or market reach inefficiencies.
 6. Statistical Validation:
-  - Hypothesis testing confirms a significant difference in profit margins between top-performing and low-performing vendors.
+    - Hypothesis testing confirms a significant difference in profit margins between top-performing and low-performing vendors.
 
 **Actionable Recommendations**
 - Pricing Optimization: Re-evaluate pricing for low-sales, high-margin brands to increase volume without sacrificing profitability.
