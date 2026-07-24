@@ -1,5 +1,71 @@
 # Vendor-Performance-Analysis-Project
 
+# Deutsch
+
+**Überblick**
+
+Ein effektives Bestands- und Verkaufsmanagement ist entscheidend für die Optimierung der Rentabilität im Einzel- und Großhandel. Diese Analyse konzentriert sich auf die Identifizierung leistungsschwacher Marken, die Bewertung der Lieferantenleistung sowie die Optimierung von Preis- und Lagerstrategien zur Steigerung von Effizienz und Rentabilität.
+
+**Die Hauptziele dieser Analyse sind:**
+- Identifizierung leistungsschwacher Marken, die Anpassungen bei Werbeaktionen oder Preisen erfordern.
+- Ermittlung der wichtigsten Lieferanten, die maßgeblich zu Umsatz und Bruttogewinn beitragen.
+- Analyse der Auswirkungen von Großeinkäufen auf die Stückkosten.
+- Bewertung des Lagerumschlags zur Senkung der Lagerhaltungskosten und zur Verbesserung der operativen Effizienz.
+- Untersuchung der Rentabilitätsunterschiede zwischen leistungsstarken und leistungsschwachen Lieferanten.
+
+**Erkenntnisse aus der Datenexploration**
+
+**Zusammenfassende Statistiken**
+
+- Bruttogewinn: Ein Mindestwert von -52.002,78 deutet auf potenzielle Verluste durch hohe Kosten oder starke Preisnachlässe hin. 
+- Gewinnspanne: Ein Minimum von -∞ weist auf Fälle hin, in denen der Umsatz null oder niedriger als die Kosten ist. 
+- Absatzmenge & Umsatzwert: Einige Produkte weisen keine Verkäufe auf, was auf Ladenhüter oder veraltete Lagerbestände hindeutet.
+
+**Ausreißer & Schwankungen**
+- Einkaufs- & Ist-Preise: Die Höchstwerte liegen deutlich über dem Durchschnitt, was auf Premiumprodukte hinweist. 
+- Frachtkosten: Die Spanne reicht von 0,09 bis 257.032,07, was auf logistische Ineffizienzen hindeutet. 
+- Lagerumschlag: Werte zwischen 0 und 274,5 zeigen Unterschiede in der Verkaufsgeschwindigkeit der Produkte.
+
+**Datenfilterung**
+
+- Um die Zuverlässigkeit der Analyse zu gewährleisten, wurden Datenpunkte mit folgenden Kriterien ausgeschlossen:
+- Bruttogewinn ≤ 0
+- Gewinnspanne ≤ 0
+- Gesamtabsatzmenge = 0
+
+**Erkenntnisse zur Korrelation**
+- Der Einkaufspreis weist eine schwache Korrelation mit dem Umsatzwert und dem Bruttogewinn auf. 
+- Die Gesamteinkaufsmenge korreliert stark mit der Gesamtabsatzmenge (0,999), was einen effektiven Lagerumschlag bestätigt. 
+- Die Gewinnspanne weist eine leichte negative Korrelation mit dem Gesamtverkaufspreis auf (-0,179). 
+- Der Lagerumschlag zeigt eine schwache negative Korrelation mit Bruttogewinn und Gewinnspanne.
+
+**Wichtigste Ergebnisse**
+
+1. Marken für Anpassungen bei Werbeaktionen oder Preisen:
+  - 198 Marken mit geringem Absatz, aber hoher Gewinnspanne könnten von gezielten Werbeaktionen oder Preisanpassungen profitieren. 2. Führende Lieferanten nach Umsatz- und Einkaufsanteil:
+  - Die 10 wichtigsten Lieferanten machen 65,69 % des Gesamteinkaufsvolumens aus, was die Abhängigkeit von wenigen Lieferanten verdeutlicht.
+3. Auswirkungen von Großeinkäufen:
+  - Lieferanten, die große Mengen abnehmen, erzielen um 72 % niedrigere Stückkosten, was kosteneffiziente Preisstrategien begünstigt.
+4. Lieferanten mit geringer Lagerumschlagshäufigkeit:
+  - Der Wert des unverkauften Lagerbestands beläuft sich auf insgesamt 2,71 Mio. USD; dies deutet auf Ladenhüter und hohe Lagerhaltungskosten hin.
+5. Vergleich der Gewinnspannen:
+  - Lieferanten mit hohem Volumen weisen niedrigere Margen (~31 %) auf als leistungsschwächere Lieferanten (~41); dies deutet auf Ineffizienzen bei der Preisgestaltung oder der Marktreichweite hin.
+6. Statistische Validierung:
+  - Hypothesentests bestätigen einen signifikanten Unterschied bei den Gewinnspannen zwischen leistungsstarken und leistungsschwachen Lieferanten.
+
+**Konkrete Handlungsempfehlungen**
+- Optimierung der Preisgestaltung: Überprüfung der Preise für Marken mit geringem Absatz, aber hoher Marge, um das Volumen zu steigern, ohne die Rentabilität zu gefährden.
+- Diversifizierung der Lieferantenbasis: Verringerung der Abhängigkeit von wenigen Lieferanten zur Minderung von Risiken in der Lieferkette.
+- Nutzung von Großeinkaufsvorteilen: Beibehaltung wettbewerbsfähiger Preise bei gleichzeitiger Optimierung der Lagerkosten.
+- Management von Ladenhütern: Anpassung der Einkaufsmengen, Durchführung von Abverkaufsaktionen oder Überarbeitung der Lagerstrategien.
+- Verbesserung von Marketing und Vertrieb: Steigerung der Sichtbarkeit und des Absatzes für leistungsschwache Lieferanten.
+
+**Fazit**
+
+Durch die Umsetzung dieser Empfehlungen können Einzel- und Großhandelsunternehmen eine nachhaltige Rentabilität erzielen, betriebliche Risiken minimieren sowie die Effizienz im Lager- und Lieferantenmanagement steigern.
+
+# English
+
 **Overview**
 
 Effective inventory and sales management are crucial for optimizing profitability in the retail and wholesale industry. This analysis focuses on identifying underperforming brands, evaluating vendor performance, and optimizing pricing and inventory strategies to improve efficiency and profitability.
