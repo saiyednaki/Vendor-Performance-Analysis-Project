@@ -1,130 +1,461 @@
-# Vendor Performance Analysis Project
+# Vendor Performance & Supply Chain Analytics | Inventory, Pricing & Profitability Intelligence
 
 # Deutsch
 
-**Überblick**
+# Lieferantenleistung & Lieferkettenanalyse | Bestands-, Preis- & Rentabilitätsanalyse
 
-Ein effektives Bestands- und Verkaufsmanagement ist entscheidend für die Optimierung der Rentabilität im Einzel- und Großhandel. Diese Analyse konzentriert sich auf die Identifizierung leistungsschwacher Marken, die Bewertung der Lieferantenleistung sowie die Optimierung von Preis- und Lagerstrategien zur Steigerung von Effizienz und Rentabilität.
+## Überblick
 
-**Die Hauptziele dieser Analyse sind:**
-- Identifizierung leistungsschwacher Marken, die Anpassungen bei Werbeaktionen oder Preisen erfordern.
-- Ermittlung der wichtigsten Lieferanten, die maßgeblich zu Umsatz und Bruttogewinn beitragen.
-- Analyse der Auswirkungen von Großeinkäufen auf die Stückkosten.
-- Bewertung des Lagerumschlags zur Senkung der Lagerhaltungskosten und zur Verbesserung der operativen Effizienz.
-- Untersuchung der Rentabilitätsunterschiede zwischen leistungsstarken und leistungsschwachen Lieferanten.
+Wie können Einzel- und Großhandelsunternehmen ihre Bestände, Lieferantenbeziehungen und Preisstrategien optimieren, um die Rentabilität zu maximieren?
 
-**Erkenntnisse aus der Datenexploration**
+Dieses Projekt analysiert die Lieferantenleistung, den Lagerumschlag, die Preiseffizienz und die Rentabilität anhand von Einkaufs- und Verkaufsdaten im Einzelhandel. Durch die Kombination von **Python**, statistischer Analyse und Business-Intelligence-Techniken wandelt das Projekt operative Daten in umsetzbare Erkenntnisse um, die Beschaffung, Bestandsmanagement und strategische Entscheidungsfindung unterstützen.
 
-**Zusammenfassende Statistiken**
+Anstatt lediglich Verkaufsdaten zu analysieren, zeigt dieses Projekt, wie Analysen Unternehmen helfen können, Kosten zu senken, die Lieferantenleistung zu verbessern und die Rentabilität zu steigern.
 
-- Bruttogewinn: Ein Mindestwert von -52.002,78 deutet auf potenzielle Verluste durch hohe Kosten oder starke Preisnachlässe hin. 
-- Gewinnspanne: Ein Minimum von -∞ weist auf Fälle hin, in denen der Umsatz null oder niedriger als die Kosten ist. 
-- Absatzmenge & Umsatzwert: Einige Produkte weisen keine Verkäufe auf, was auf Ladenhüter oder veraltete Lagerbestände hindeutet.
+---
 
-**Ausreißer & Schwankungen**
-- Einkaufs- & Ist-Preise: Die Höchstwerte liegen deutlich über dem Durchschnitt, was auf Premiumprodukte hinweist. 
-- Frachtkosten: Die Spanne reicht von 0,09 bis 257.032,07, was auf logistische Ineffizienzen hindeutet. 
-- Lagerumschlag: Werte zwischen 0 und 274,5 zeigen Unterschiede in der Verkaufsgeschwindigkeit der Produkte.
+# Geschäftsproblem
 
-**Datenfilterung**
+Einzel- und Großhandelsunternehmen arbeiten oft mit Hunderten von Lieferanten und Tausenden von Produkten. Ohne datengestützte Analysen fällt es Unternehmen schwer, leistungsschwache Lieferanten zu identifizieren, ihre Lagerbestände zu optimieren und profitable Preisstrategien beizubehalten.
 
-- Um die Zuverlässigkeit der Analyse zu gewährleisten, wurden Datenpunkte mit folgenden Kriterien ausgeschlossen:
-- Bruttogewinn ≤ 0
-- Gewinnspanne ≤ 0
-- Gesamtabsatzmenge = 0
+Das Unternehmen benötigte Antworten auf Schlüsselfragen wie:
 
-**Erkenntnisse zur Korrelation**
-- Der Einkaufspreis weist eine schwache Korrelation mit dem Umsatzwert und dem Bruttogewinn auf. 
-- Die Gesamteinkaufsmenge korreliert stark mit der Gesamtabsatzmenge (0,999), was einen effektiven Lagerumschlag bestätigt. 
-- Die Gewinnspanne weist eine leichte negative Korrelation mit dem Gesamtverkaufspreis auf (-0,179). 
-- Der Lagerumschlag zeigt eine schwache negative Korrelation mit Bruttogewinn und Gewinnspanne.
+- Welche Lieferanten tragen am meisten zu Umsatz und Gewinn bei?
 
-**Wichtigste Ergebnisse**
+- Welche Marken erzielen trotz hoher Gewinnmargen eine schwache Performance?
 
-1. Marken für Anpassungen bei Werbeaktionen oder Preisen:
-  - 198 Marken mit geringem Absatz, aber hoher Gewinnspanne könnten von gezielten Werbeaktionen oder Preisanpassungen profitieren. 2. Führende Lieferanten nach Umsatz- und Einkaufsanteil:
-  - Die 10 wichtigsten Lieferanten machen 65,69 % des Gesamteinkaufsvolumens aus, was die Abhängigkeit von wenigen Lieferanten verdeutlicht.
-3. Auswirkungen von Großeinkäufen:
-  - Lieferanten, die große Mengen abnehmen, erzielen um 72 % niedrigere Stückkosten, was kosteneffiziente Preisstrategien begünstigt.
-4. Lieferanten mit geringer Lagerumschlagshäufigkeit:
-  - Der Wert des unverkauften Lagerbestands beläuft sich auf insgesamt 2,71 Mio. USD; dies deutet auf Ladenhüter und hohe Lagerhaltungskosten hin.
-5. Vergleich der Gewinnspannen:
-  - Lieferanten mit hohem Volumen weisen niedrigere Margen (~31 %) auf als leistungsschwächere Lieferanten (~41); dies deutet auf Ineffizienzen bei der Preisgestaltung oder der Marktreichweite hin.
-6. Statistische Validierung:
-  - Hypothesentests bestätigen einen signifikanten Unterschied bei den Gewinnspannen zwischen leistungsstarken und leistungsschwachen Lieferanten.
+- Senkt der Großeinkauf die Beschaffungskosten?
 
-**Konkrete Handlungsempfehlungen**
-- Optimierung der Preisgestaltung: Überprüfung der Preise für Marken mit geringem Absatz, aber hoher Marge, um das Volumen zu steigern, ohne die Rentabilität zu gefährden.
-- Diversifizierung der Lieferantenbasis: Verringerung der Abhängigkeit von wenigen Lieferanten zur Minderung von Risiken in der Lieferkette.
-- Nutzung von Großeinkaufsvorteilen: Beibehaltung wettbewerbsfähiger Preise bei gleichzeitiger Optimierung der Lagerkosten.
-- Management von Ladenhütern: Anpassung der Einkaufsmengen, Durchführung von Abverkaufsaktionen oder Überarbeitung der Lagerstrategien.
-- Verbesserung von Marketing und Vertrieb: Steigerung der Sichtbarkeit und des Absatzes für leistungsschwache Lieferanten.
+- Welche Produkte binden Kapital aufgrund geringer Lagerumschlagshäufigkeit?
 
-**Fazit**
+- Sind leistungsstarke Lieferanten profitabler als leistungsschwache?
 
-Durch die Umsetzung dieser Empfehlungen können Einzel- und Großhandelsunternehmen eine nachhaltige Rentabilität erzielen, betriebliche Risiken minimieren sowie die Effizienz im Lager- und Lieferantenmanagement steigern.
+- Wie lassen sich Beschaffungs- und Preisstrategien verbessern?
+
+Ohne diese Erkenntnisse riskieren Unternehmen Überbestände, Ineffizienzen in der Lieferkette und geringere Rentabilität.
+
+
+---
+
+# Lösung
+
+Dieses Projekt wandelt mithilfe von **Python** Beschaffungs- und Vertriebsdaten in aussagekräftige Business Intelligence um, indem es:
+
+- Einkaufs- und Vertriebsdaten bereinigt und aufbereitet
+- die Leistung und Rentabilität von Lieferanten analysiert
+- den Lagerumschlag und die Lagereffizienz bewertet
+- Korrelationsanalysen zwischen operativen Variablen durchführt
+- Hypothesentests anwendet, um Geschäftsannahmen zu validieren
+- Umsetzbare Empfehlungen zur Optimierung von Beschaffung und Preisgestaltung liefert
+
+---
+
+# Geschäftsziele
+
+Die Analyse unterstützt Unternehmen dabei:
+
+- das Lieferantenmanagement zu verbessern
+- Beschaffungsstrategien zu optimieren
+- die Lagerhaltungskosten zu senken
+- die operative Effizienz zu steigern
+- Preisentscheidungen zu verbessern
+- eine datengestützte Supply-Chain-Planung zu unterstützen
+
+---
+
+# Analyse-Workflow
+
+## Schritt 1 – Datenaufbereitung
+
+- Datenbereinigung
+- Umgang mit fehlenden Werten
+- Identifizierung von Ausreißern
+- Validierung von Geschäftsregeln
+
+---
+
+## Schritt 2 – Analyse der Lieferantenleistung
+
+Bewertung des Lieferantenbeitrags hinsichtlich:
+
+- Umsatz
+- Bruttogewinn
+- Einkaufsvolumen
+- Gewinn Margen
+
+---
+
+## Schritt 3 – Bestandsanalyse
+
+Messen Sie die Bestandseffizienz anhand folgender Kennzahlen:
+
+- Lagerumschlag
+- Langsam drehende Artikel
+- Lagerhaltungskosten
+
+---
+
+## Schritt 4 – Preis- und Kostenanalyse
+
+Bewerten Sie:
+
+- Einkaufspreise
+- Mengenrabatte
+- Preisstrategien der Lieferanten
+- Beschaffungseffizienz
+
+---
+
+## Schritt 5 – Statistische Analyse
+
+Validieren Sie die Geschäftsergebnisse mithilfe folgender Methoden:
+
+- Korrelationsanalyse
+- Hypothesentests
+- Rentabilitätsvergleiche
+
+---
+
+# Verwendete Technologien
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- SciPy
+- Jupyter Notebook
+
+---
+
+# Analysetechniken
+
+- Explorative Datenanalyse (EDA)
+- Korrelationsanalyse
+- Hypothesentests
+- Deskriptive Statistik
+- Datenvisualisierung
+- Analyse der Geschäftsentwicklung
+
+---
+
+# Wichtigste Geschäftserkenntnisse
+
+Die Analyse Es wurden mehrere Möglichkeiten zur Verbesserung der Geschäftsergebnisse identifiziert:
+
+- **198 leistungsschwache Marken** erzielten trotz hoher Gewinnmargen geringe Umsätze, was auf Potenzial für Werbekampagnen oder Preisanpassungen hinweist.
+
+- Die **10 größten Lieferanten** machten rund 65,7 % der Gesamteinkäufe aus, was das Risiko einer Lieferantenkonzentration verdeutlicht.
+
+- Lieferanten, die in großen Mengen einkauften, erzielten **72 % niedrigere Stückkosten**, was die finanziellen Vorteile einer optimierten Beschaffung unterstreicht.
+
+- Rund **2,71 Millionen US-Dollar** an Kapital waren in Lagerbeständen mit geringem Umschlag gebunden, was die Lagerkosten erhöhte und die betriebliche Effizienz verringerte.
+
+- Statistische Hypothesentests bestätigten einen signifikanten Unterschied in der Rentabilität zwischen leistungsstarken und leistungsschwachen Lieferanten.
+
+---
+
+# Geschäftlicher Nutzen
+
+Die Erkenntnisse aus diesem Projekt ermöglichen es Unternehmen:
+
+- Preisstrategien zu optimieren
+- Die Lieferantenauswahl zu verbessern
+- Lagerhaltungskosten zu senken
+- Beschaffungsrisiken zu minimieren
+- Die operative Effizienz zu steigern
+- Strategische Entscheidungen in der Lieferkette zu unterstützen
+
+---
+
+# Geschäftsempfehlungen
+
+Basierend auf der Analyse:
+
+- Die Preisgestaltung für margenstarke Marken mit geringem Absatz zu überprüfen, um den Absatz zu steigern.
+
+- Die Lieferantenbasis zu diversifizieren, um das Beschaffungsrisiko zu reduzieren.
+
+Bei finanzieller Vorteilhaftigkeit weiterhin Großeinkäufe zu nutzen.
+
+- Langsam drehende Lagerbestände durch gezielte Werbeaktionen und Bestandsoptimierung zu reduzieren.
+
+- Die Überwachung der Lieferantenleistung mithilfe von KPI-Dashboards zu verbessern.
+
+---
+
+# Angezeigte Kompetenzen
+
+- Business Intelligence
+- Supply-Chain-Analyse
+- LieferantenleistungsüberwachungLeistungsanalyse
+- Bestandsanalyse
+- Preisanalyse
+- Statistische Analyse
+- Korrelationsanalyse
+- Hypothesentests
+- Python
+- Datenvisualisierung
+- Data Storytelling
+- Entscheidungsunterstützung
+
+---
+
+# Wichtigste Ergebnisse
+
+✔ Analyse der Lieferantenleistung
+
+✔ Bewertung von Lagerumschlag und Beschaffungseffizienz
+
+✔ Identifizierung von Optimierungspotenzialen bei der Preisgestaltung
+
+✔ Anwendung statistischer Tests zur Validierung geschäftlicher Erkenntnisse
+
+✔ Erarbeitung datengestützter Empfehlungen zur Steigerung der Rentabilität
+
+---
+
+# Struktur des Repositorys
+
+```text
+Vendor-Performance-Analysis/
+│
+├── Dataset/
+├── Notebooks/
+├── Reports/
+├── Images/
+└── README.md
+```
+
+---
+
+# Kontakt
+
+**Naki Saiyed**
+
+**Business Intelligence & Data Analyst**
+
+- 💼 LinkedIn: https://linkedin.com/in/saiyed-naki
+- 💻 GitHub: https://github.com/saiyednaki
 
 # English
 
-**Overview**
+## Overview
 
-Effective inventory and sales management are crucial for optimizing profitability in the retail and wholesale industry. This analysis focuses on identifying underperforming brands, evaluating vendor performance, and optimizing pricing and inventory strategies to improve efficiency and profitability.
+How can retail and wholesale businesses optimise inventory, supplier relationships, and pricing strategies to maximise profitability?
 
-**The main objectives of this analysis are:**
-Identify underperforming brands requiring promotional or pricing adjustments.
-Determine top vendors contributing to sales and gross profit.
-Analyze the impact of bulk purchasing on unit costs.
-Assess inventory turnover to reduce holding costs and improve operational efficiency.
-Investigate profitability variance between high-performing and low-performing vendors.
+This project analyses vendor performance, inventory turnover, pricing efficiency, and profitability using retail purchasing and sales data. By combining **Python**, statistical analysis, and business intelligence techniques, the project transforms operational data into actionable insights that support procurement, inventory management, and strategic decision-making.
 
-**Data Exploration Insights**
+Rather than simply analysing sales data, this project demonstrates how analytics can help organisations reduce costs, improve supplier performance, and increase profitability.
 
-**Summary Statistics**
+---
 
-  - Gross Profit: Minimum value of -52,002.78 indicates potential losses due to high costs or heavy discounts.
-  - Profit Margin: Minimum of -∞, showing cases where revenue is zero or lower than costs.
-  - Sales Quantity & Sales Dollars: Some products show zero sales, suggesting slow-moving or obsolete inventory.
+# Business Problem
 
-**Outliers & Variations**
-  - Purchase & Actual Prices: Maximum values are significantly higher than the mean, indicating premium products.
-  - Freight Costs: Range from 0.09 to 257,032.07, highlighting logistical inefficiencies.
-  - Stock Turnover: Ranges from 0 to 274.5, indicating variability in product sales velocity.
+Retail and wholesale businesses often work with hundreds of suppliers and thousands of products. Without data-driven analysis, organisations struggle to identify underperforming vendors, optimise inventory levels, and maintain profitable pricing strategies.
 
-**Data Filtering**
+The business needed answers to key questions such as:
 
-- To ensure analysis reliability, data points were filtered to exclude:
-- Gross Profit ≤ 0
-- Profit Margin ≤ 0
-- Total Sales Quantity = 0
+- Which vendors contribute the most to revenue and profit?
+- Which brands underperform despite strong profit margins?
+- Does bulk purchasing reduce procurement costs?
+- Which products tie up capital due to slow inventory turnover?
+- Are high-performing vendors more profitable than low-performing vendors?
+- How can procurement and pricing strategies be improved?
 
-**Correlation Insights**
-  - Purchase price has a weak correlation with sales dollars and gross profit.
-  - Total purchase quantity correlates strongly with total sales quantity (0.999), confirming effective inventory turnover.
-  - Profit margin has a slight negative correlation with total sales price (-0.179).
-  - Stock turnover shows weak negative correlation with gross profit and profit margin.
+Without these insights, businesses risk excess inventory, supply chain inefficiencies, and reduced profitability.
 
-**Key Findings**
+---
 
-1. Brands for Promotional or Pricing Adjustments:
-    - 198 brands with low sales but high profit margins could benefit from targeted promotions or price adjustments.
-2. Top Vendors by Sales & Purchase Contribution:
-    - Top 10 vendors contribute 65.69% of total purchases, highlighting dependency on a few suppliers.
-3. Impact of Bulk Purchasing:
-    - Vendors buying in bulk achieve 72% lower unit costs, supporting cost-effective pricing strategies.
-4. Vendors with Low Inventory Turnover:
-    - Unsold inventory capital totals $2.71M, indicating slow-moving stock and high holding costs.
-5. Profit Margin Comparison:
-    - High-volume vendors have lower margins (~31%) compared to low-performing vendors (~41%), suggesting pricing or market reach inefficiencies.
-6. Statistical Validation:
-    - Hypothesis testing confirms a significant difference in profit margins between top-performing and low-performing vendors.
+# Solution
 
-**Actionable Recommendations**
-- Pricing Optimization: Re-evaluate pricing for low-sales, high-margin brands to increase volume without sacrificing profitability.
-- Vendor Diversification: Reduce reliance on a few vendors to mitigate supply chain risks.
-- Leverage Bulk Purchasing: Maintain competitive pricing while optimizing inventory costs.
-- Manage Slow-Moving Inventory: Adjust purchase quantities, launch clearance sales, or revise storage strategies.
-- Enhance Marketing & Distribution: Improve visibility and sales for low-performing vendors.
+Using **Python**, this project transforms procurement and sales data into meaningful business intelligence by:
 
-**Conclusion**
+- Cleaning and preparing purchasing and sales data
+- Analysing vendor performance and profitability
+- Evaluating inventory turnover and stock efficiency
+- Performing correlation analysis between operational variables
+- Applying hypothesis testing to validate business assumptions
+- Delivering actionable recommendations for procurement and pricing optimisation
 
-By implementing these recommendations, retail and wholesale businesses can achieve sustainable profitability, reduce operational risks, and improve inventory and vendor management efficiency.
+---
+
+# Business Objectives
+
+The analysis helps organisations:
+
+- Improve supplier performance management
+- Optimise procurement strategies
+- Reduce inventory holding costs
+- Increase operational efficiency
+- Improve pricing decisions
+- Support data-driven supply chain planning
+
+---
+
+# Analysis Workflow
+
+## Step 1 — Data Preparation
+
+- Data cleaning
+- Missing value handling
+- Outlier identification
+- Business rule validation
+
+---
+
+## Step 2 — Vendor Performance Analysis
+
+Evaluate supplier contribution across:
+
+- Revenue
+- Gross profit
+- Purchase volume
+- Profit margins
+
+---
+
+## Step 3 — Inventory Analysis
+
+Measure inventory efficiency through:
+
+- Stock turnover
+- Slow-moving inventory
+- Inventory holding costs
+
+---
+
+## Step 4 — Pricing & Cost Analysis
+
+Evaluate:
+
+- Purchase prices
+- Bulk purchasing discounts
+- Vendor pricing strategies
+- Procurement efficiency
+
+---
+
+## Step 5 — Statistical Analysis
+
+Validate business findings using:
+
+- Correlation analysis
+- Hypothesis testing
+- Profitability comparisons
+
+---
+
+# Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- SciPy
+- Jupyter Notebook
+
+---
+
+# Analytical Techniques
+
+- Exploratory Data Analysis (EDA)
+- Correlation Analysis
+- Hypothesis Testing
+- Descriptive Statistics
+- Data Visualisation
+- Business Performance Analysis
+
+---
+
+# Key Business Insights
+
+The analysis identified several opportunities to improve business performance:
+
+- **198 underperforming brands** generated low sales despite high profit margins, indicating opportunities for promotional campaigns or pricing adjustments.
+- The **top 10 vendors accounted for approximately 65.7% of total purchases**, highlighting supplier concentration risk.
+- Vendors purchasing in bulk achieved **72% lower unit costs**, demonstrating the financial benefits of procurement optimisation.
+- Approximately **$2.71 million** of capital was tied up in slow-moving inventory, increasing holding costs and reducing operational efficiency.
+- Statistical hypothesis testing confirmed a significant difference in profitability between high-performing and low-performing vendors.
+
+---
+
+# Business Value
+
+The insights generated through this project enable organisations to:
+
+- Optimise pricing strategies
+- Improve supplier selection
+- Reduce inventory holding costs
+- Minimise procurement risks
+- Increase operational efficiency
+- Support strategic supply chain decisions
+
+---
+
+# Business Recommendations
+
+Based on the analysis:
+
+- Reassess pricing for low-sales, high-margin brands to increase sales volume.
+- Diversify suppliers to reduce procurement risk.
+- Continue leveraging bulk purchasing where financially beneficial.
+- Reduce slow-moving inventory through targeted promotions and inventory optimisation.
+- Improve vendor performance monitoring using KPI dashboards.
+
+---
+
+# Skills Demonstrated
+
+- Business Intelligence
+- Supply Chain Analytics
+- Vendor Performance Analysis
+- Inventory Analytics
+- Pricing Analytics
+- Statistical Analysis
+- Correlation Analysis
+- Hypothesis Testing
+- Python
+- Data Visualisation
+- Data Storytelling
+- Decision Support
+
+---
+
+# Key Outcomes
+
+✔ Analysed vendor and supplier performance
+
+✔ Evaluated inventory turnover and procurement efficiency
+
+✔ Identified pricing optimisation opportunities
+
+✔ Applied statistical testing to validate business insights
+
+✔ Delivered data-driven recommendations to improve profitability
+
+---
+
+# Repository Structure
+
+```text
+Vendor-Performance-Analysis/
+│
+├── Dataset/
+├── Notebooks/
+├── Reports/
+├── Images/
+└── README.md
+```
+
+---
+
+# Connect With Me
+
+**Naki Saiyed**
+
+**Business Intelligence & Data Analyst**
+
+- 💼 LinkedIn: https://linkedin.com/in/saiyed-naki
+- 💻 GitHub: https://github.com/saiyednaki
