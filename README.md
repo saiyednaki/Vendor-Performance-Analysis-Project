@@ -1,4 +1,4 @@
-# Vendor Performance & Supply Chain Analytics | Inventory, Pricing & Profitability Intelligence
+# Which Vendors Drive Better Supply Chain Performance? | SQL Analytics
 
 # Deutsch
 
